@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm số điện thoại nhà mạng Viettel</title>
+</head>
+<body>
+<script>
+    var numberViettel = ["0312304728", "0974392471", "0382736102", "0372037104",
+        "0384020940", "0916223314", "07764512552", "0760509749",
+        "03730980654", "03860940067", "03990320664", "0834567189",
+        "09174504493", "0902383018", "0384658729"]
+    var regexp = /^[0]([3][2-9]|[9][6-8]|[8][6])[0-9]{7}$/
+    var count = 0
+    var nums = []
+    var check = true
+    for (i = 0; i < numberViettel.length; i++) {
+        if (regexp.test(numberViettel[i])) {
+            count++
+            nums.push(numberViettel[i] + " ")
+            check = false
+        }
+    }
+    if (check == false) {
+        document.write("tìm được " + count + " số Viettel " + nums)
+    } else {
+        document.write("Không có số này trong danh sách")
+    }
+</script>
+</body>
+</html>
